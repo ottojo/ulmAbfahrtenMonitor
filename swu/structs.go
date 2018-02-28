@@ -1,6 +1,6 @@
-package main
+package swu
 
-type XMLStops struct {
+type xmlStops struct {
 	Stops []Stop `xml:" stop,omitempty" json:"stop,omitempty" db:" stop,omitempty"`
 }
 
@@ -12,11 +12,11 @@ type Stop struct {
 	Name       string  `xml:" name,attr"  json:",omitempty"`
 }
 
-type SessionResponse struct {
+type sessionResponse struct {
 	SessionID string `xml:"sessionID"`
 }
 
-type ItdRequest struct {
+type itdRequest struct {
 	CalcTime                   string                     `xml:" calcTime,attr"  json:",omitempty"`
 	Client                     string                     `xml:" client,attr"  json:",omitempty"`
 	ClientIP                   string                     `xml:" clientIP,attr"  json:",omitempty"`
@@ -28,60 +28,60 @@ type ItdRequest struct {
 	SessionID                  string                     `xml:" sessionID,attr"  json:",omitempty"`
 	Version                    string                     `xml:" version,attr"  json:",omitempty"`
 	VirtDir                    string                     `xml:" virtDir,attr"  json:",omitempty"`
-	ItdDepartureMonitorRequest ItdDepartureMonitorRequest `xml:" itdDepartureMonitorRequest,omitempty" json:"itdDepartureMonitorRequest,omitempty" db:" itdDepartureMonitorRequest,omitempty"`
-	ItdVersionInfo             ItdVersionInfo             `xml:" itdVersionInfo,omitempty" json:"itdVersionInfo,omitempty" db:" itdVersionInfo,omitempty"`
+	ItdDepartureMonitorRequest itdDepartureMonitorRequest `xml:" itdDepartureMonitorRequest,omitempty" json:"itdDepartureMonitorRequest,omitempty" db:" itdDepartureMonitorRequest,omitempty"`
+	ItdVersionInfo             itdVersionInfo             `xml:" itdVersionInfo,omitempty" json:"itdVersionInfo,omitempty" db:" itdVersionInfo,omitempty"`
 }
 
-type ItdVersionInfo struct {
-	PtKernel PtKernel `xml:" ptKernel,omitempty" json:"ptKernel,omitempty" db:" ptKernel,omitempty"`
+type itdVersionInfo struct {
+	PtKernel ptKernel `xml:" ptKernel,omitempty" json:"ptKernel,omitempty" db:" ptKernel,omitempty"`
 }
 
-type PtKernel struct {
-	AppVersion AppVersion `xml:" appVersion,omitempty" json:"appVersion,omitempty" db:" appVersion,omitempty"`
-	DataBuild  DataBuild  `xml:" dataBuild,omitempty" json:"dataBuild,omitempty" db:" dataBuild,omitempty"`
-	DataFormat DataFormat `xml:" dataFormat,omitempty" json:"dataFormat,omitempty" db:" dataFormat,omitempty"`
+type ptKernel struct {
+	AppVersion appVersion `xml:" appVersion,omitempty" json:"appVersion,omitempty" db:" appVersion,omitempty"`
+	DataBuild  dataBuild  `xml:" dataBuild,omitempty" json:"dataBuild,omitempty" db:" dataBuild,omitempty"`
+	DataFormat dataFormat `xml:" dataFormat,omitempty" json:"dataFormat,omitempty" db:" dataFormat,omitempty"`
 }
 
-type AppVersion struct {
+type appVersion struct {
 	Text string `xml:",chardata" json:",omitempty"`
 }
 
-type DataFormat struct {
+type dataFormat struct {
 	Text string `xml:",chardata" json:",omitempty"`
 }
 
-type DataBuild struct {
+type dataBuild struct {
 	Text string `xml:",chardata" json:",omitempty"`
 }
 
-type ItdDepartureMonitorRequest struct {
+type itdDepartureMonitorRequest struct {
 	RequestID        string           `xml:" requestID,attr"  json:",omitempty"`
-	ItdDMDateTime    ItdDMDateTime    `xml:" itdDMDateTime,omitempty" json:"itdDMDateTime,omitempty" db:" itdDMDateTime,omitempty"`
-	ItdDateRange     ItdDateRange     `xml:" itdDateRange,omitempty" json:"itdDateRange,omitempty" db:" itdDateRange,omitempty"`
+	ItdDMDateTime    itdDMDateTime    `xml:" itdDMDateTime,omitempty" json:"itdDMDateTime,omitempty" db:" itdDMDateTime,omitempty"`
+	ItdDateRange     itdDateRange     `xml:" itdDateRange,omitempty" json:"itdDateRange,omitempty" db:" itdDateRange,omitempty"`
 	ItdDateTime      ItdDateTime      `xml:" itdDateTime,omitempty" json:"itdDateTime,omitempty" db:" itdDateTime,omitempty"`
-	ItdDepartureList ItdDepartureList `xml:" itdDepartureList,omitempty" json:"itdDepartureList,omitempty" db:" itdDepartureList,omitempty"`
-	ItdOdv           ItdOdv           `xml:" itdOdv,omitempty" json:"itdOdv,omitempty" db:" itdOdv,omitempty"`
-	ItdServingLines  ItdServingLines  `xml:" itdServingLines,omitempty" json:"itdServingLines,omitempty" db:" itdServingLines,omitempty"`
-	ItdTripOptions   ItdTripOptions   `xml:" itdTripOptions,omitempty" json:"itdTripOptions,omitempty" db:" itdTripOptions,omitempty"`
+	ItdDepartureList itdDepartureList `xml:" itdDepartureList,omitempty" json:"itdDepartureList,omitempty" db:" itdDepartureList,omitempty"`
+	ItdOdv           itdOdv           `xml:" itdOdv,omitempty" json:"itdOdv,omitempty" db:" itdOdv,omitempty"`
+	ItdServingLines  itdServingLines  `xml:" itdServingLines,omitempty" json:"itdServingLines,omitempty" db:" itdServingLines,omitempty"`
+	ItdTripOptions   itdTripOptions   `xml:" itdTripOptions,omitempty" json:"itdTripOptions,omitempty" db:" itdTripOptions,omitempty"`
 }
 
-type ItdOdv struct {
+type itdOdv struct {
 	AnyObjFilter string      `xml:" anyObjFilter,attr"  json:",omitempty"`
 	BuildNiveau  string      `xml:" buildNiveau,attr"  json:",omitempty"`
 	Type         string      `xml:" type,attr"  json:",omitempty"`
 	Usage        string      `xml:" usage,attr"  json:",omitempty"`
-	ItdOdvName   ItdOdvName  `xml:" itdOdvName,omitempty" json:"itdOdvName,omitempty" db:" itdOdvName,omitempty"`
-	ItdOdvPlace  ItdOdvPlace `xml:" itdOdvPlace,omitempty" json:"itdOdvPlace,omitempty" db:" itdOdvPlace,omitempty"`
+	ItdOdvName   itdOdvName  `xml:" itdOdvName,omitempty" json:"itdOdvName,omitempty" db:" itdOdvName,omitempty"`
+	ItdOdvPlace  itdOdvPlace `xml:" itdOdvPlace,omitempty" json:"itdOdvPlace,omitempty" db:" itdOdvPlace,omitempty"`
 }
 
-type ItdOdvPlace struct {
+type itdOdvPlace struct {
 	Method        string        `xml:" method,attr"  json:",omitempty"`
 	State         string        `xml:" state,attr"  json:",omitempty"`
-	OdvPlaceElem  OdvPlaceElem  `xml:" odvPlaceElem,omitempty" json:"odvPlaceElem,omitempty" db:" odvPlaceElem,omitempty"`
-	OdvPlaceInput OdvPlaceInput `xml:" odvPlaceInput,omitempty" json:"odvPlaceInput,omitempty" db:" odvPlaceInput,omitempty"`
+	OdvPlaceElem  odvPlaceElem  `xml:" odvPlaceElem,omitempty" json:"odvPlaceElem,omitempty" db:" odvPlaceElem,omitempty"`
+	OdvPlaceInput odvPlaceInput `xml:" odvPlaceInput,omitempty" json:"odvPlaceInput,omitempty" db:" odvPlaceInput,omitempty"`
 }
 
-type OdvPlaceElem struct {
+type odvPlaceElem struct {
 	MainPlace string `xml:" mainPlace,attr"  json:",omitempty"`
 	Omc       string `xml:" omc,attr"  json:",omitempty"`
 	PlaceID   string `xml:" placeID,attr"  json:",omitempty"`
@@ -92,17 +92,17 @@ type OdvPlaceElem struct {
 	Text      string `xml:",chardata" json:",omitempty"`
 }
 
-type OdvPlaceInput struct {
+type odvPlaceInput struct {
 }
 
-type ItdOdvName struct {
+type itdOdvName struct {
 	Method       string       `xml:" method,attr"  json:",omitempty"`
 	State        string       `xml:" state,attr"  json:",omitempty"`
-	OdvNameElem  OdvNameElem  `xml:" odvNameElem,omitempty" json:"odvNameElem,omitempty" db:" odvNameElem,omitempty"`
-	OdvNameInput OdvNameInput `xml:" odvNameInput,omitempty" json:"odvNameInput,omitempty" db:" odvNameInput,omitempty"`
+	OdvNameElem  odvNameElem  `xml:" odvNameElem,omitempty" json:"odvNameElem,omitempty" db:" odvNameElem,omitempty"`
+	OdvNameInput odvNameInput `xml:" odvNameInput,omitempty" json:"odvNameInput,omitempty" db:" odvNameInput,omitempty"`
 }
 
-type OdvNameElem struct {
+type odvNameElem struct {
 	IsTransferStop string         `xml:" isTransferStop,attr"  json:",omitempty"`
 	MapName        string         `xml:" mapName,attr"  json:",omitempty"`
 	MatchQuality   string         `xml:" matchQuality,attr"  json:",omitempty"`
@@ -112,14 +112,14 @@ type OdvNameElem struct {
 	Value          string         `xml:" value,attr"  json:",omitempty"`
 	X              string         `xml:" x,attr"  json:",omitempty"`
 	Y              string         `xml:" y,attr"  json:",omitempty"`
-	ItdMapItemList ItdMapItemList `xml:" itdMapItemList,omitempty" json:"itdMapItemList,omitempty" db:" itdMapItemList,omitempty"`
+	ItdMapItemList itdMapItemList `xml:" itdMapItemList,omitempty" json:"itdMapItemList,omitempty" db:" itdMapItemList,omitempty"`
 	Text           string         `xml:",chardata" json:",omitempty"`
 }
 
-type ItdMapItemList struct {
+type itdMapItemList struct {
 }
 
-type OdvNameInput struct {
+type odvNameInput struct {
 	Text int32 `xml:",chardata" json:",omitempty"`
 }
 
@@ -143,21 +143,21 @@ type ItdTime struct {
 	Minute string `xml:" minute,attr"  json:",omitempty"`
 }
 
-type ItdDMDateTime struct {
+type itdDMDateTime struct {
 	Deparr string `xml:" deparr,attr"  json:",omitempty"`
 }
 
-type ItdDateRange struct {
+type itdDateRange struct {
 	ItdDate []ItdDate `xml:" itdDate,omitempty" json:"itdDate,omitempty" db:" itdDate,omitempty"`
 }
 
-type ItdTripOptions struct {
-	ItdItOptions   ItdItOptions   `xml:" itdItOptions,omitempty" json:"itdItOptions,omitempty" db:" itdItOptions,omitempty"`
-	ItdPtOptions   ItdPtOptions   `xml:" itdPtOptions,omitempty" json:"itdPtOptions,omitempty" db:" itdPtOptions,omitempty"`
-	ItdUsedOptions ItdUsedOptions `xml:" itdUsedOptions,omitempty" json:"itdUsedOptions,omitempty" db:" itdUsedOptions,omitempty"`
+type itdTripOptions struct {
+	ItdItOptions   itdItOptions   `xml:" itdItOptions,omitempty" json:"itdItOptions,omitempty" db:" itdItOptions,omitempty"`
+	ItdPtOptions   itdPtOptions   `xml:" itdPtOptions,omitempty" json:"itdPtOptions,omitempty" db:" itdPtOptions,omitempty"`
+	ItdUsedOptions itdUsedOptions `xml:" itdUsedOptions,omitempty" json:"itdUsedOptions,omitempty" db:" itdUsedOptions,omitempty"`
 }
 
-type ItdPtOptions struct {
+type itdPtOptions struct {
 	Active                       string        `xml:" active,attr"  json:",omitempty"`
 	ActiveCom                    string        `xml:" activeCom,attr"  json:",omitempty"`
 	ActiveImp                    string        `xml:" activeImp,attr"  json:",omitempty"`
@@ -189,34 +189,34 @@ type ItdPtOptions struct {
 	UseProxFootSearchDestination string        `xml:" useProxFootSearchDestination,attr"  json:",omitempty"`
 	UseProxFootSearchOrigin      string        `xml:" useProxFootSearchOrigin,attr"  json:",omitempty"`
 	Wheelchair                   string        `xml:" wheelchair,attr"  json:",omitempty"`
-	ExcludedMeans                ExcludedMeans `xml:" excludedMeans,omitempty" json:"excludedMeans,omitempty" db:" excludedMeans,omitempty"`
+	ExcludedMeans                excludedMeans `xml:" excludedMeans,omitempty" json:"excludedMeans,omitempty" db:" excludedMeans,omitempty"`
 }
 
-type ExcludedMeans struct {
-	MeansElem []MeansElem `xml:" meansElem,omitempty" json:"meansElem,omitempty" db:" meansElem,omitempty"`
+type excludedMeans struct {
+	MeansElem []meansElem `xml:" meansElem,omitempty" json:"meansElem,omitempty" db:" meansElem,omitempty"`
 }
 
-type MeansElem struct {
+type meansElem struct {
 	Selected string `xml:" selected,attr"  json:",omitempty"`
 	Value    string `xml:" value,attr"  json:",omitempty"`
 	Text     string `xml:",chardata" json:",omitempty"`
 }
 
-type ItdItOptions struct {
-	DepartureTransport DepartureTransport `xml:" departureTransport,omitempty" json:"departureTransport,omitempty" db:" departureTransport,omitempty"`
-	ItBicycle          ItBicycle          `xml:" itBicycle,omitempty" json:"itBicycle,omitempty" db:" itBicycle,omitempty"`
-	ItPedestrian       ItPedestrian       `xml:" itPedestrian,omitempty" json:"itPedestrian,omitempty" db:" itPedestrian,omitempty"`
-	ItRouter           ItRouter           `xml:" itRouter,omitempty" json:"itRouter,omitempty" db:" itRouter,omitempty"`
-	MitCar             MitCar             `xml:" mitCar,omitempty" json:"mitCar,omitempty" db:" mitCar,omitempty"`
-	MitTaxi            MitTaxi            `xml:" mitTaxi,omitempty" json:"mitTaxi,omitempty" db:" mitTaxi,omitempty"`
+type itdItOptions struct {
+	DepartureTransport departureTransport `xml:" departureTransport,omitempty" json:"departureTransport,omitempty" db:" departureTransport,omitempty"`
+	ItBicycle          itBicycle          `xml:" itBicycle,omitempty" json:"itBicycle,omitempty" db:" itBicycle,omitempty"`
+	ItPedestrian       itPedestrian       `xml:" itPedestrian,omitempty" json:"itPedestrian,omitempty" db:" itPedestrian,omitempty"`
+	ItRouter           itRouter           `xml:" itRouter,omitempty" json:"itRouter,omitempty" db:" itRouter,omitempty"`
+	MitCar             mitCar             `xml:" mitCar,omitempty" json:"mitCar,omitempty" db:" mitCar,omitempty"`
+	MitTaxi            mitTaxi            `xml:" mitTaxi,omitempty" json:"mitTaxi,omitempty" db:" mitTaxi,omitempty"`
 }
 
-type ItRouter struct {
+type itRouter struct {
 	LogASCII string `xml:" logASCII,attr"  json:",omitempty"`
 	LogSVG   string `xml:" logSVG,attr"  json:",omitempty"`
 }
 
-type ItPedestrian struct {
+type itPedestrian struct {
 	ComputationType          string `xml:" computationType,attr"  json:",omitempty"`
 	ComputeAlternativeRoutes string `xml:" computeAlternativeRoutes,attr"  json:",omitempty"`
 	ComputeMonomodalTrip     string `xml:" computeMonomodalTrip,attr"  json:",omitempty"`
@@ -242,7 +242,7 @@ type ItPedestrian struct {
 	UseHdcAcc                string `xml:" useHdcAcc,attr"  json:",omitempty"`
 }
 
-type ItBicycle struct {
+type itBicycle struct {
 	ComputationType          string `xml:" computationType,attr"  json:",omitempty"`
 	ComputeAlternativeRoutes string `xml:" computeAlternativeRoutes,attr"  json:",omitempty"`
 	ComputeMonomodalTrip     string `xml:" computeMonomodalTrip,attr"  json:",omitempty"`
@@ -284,7 +284,7 @@ type ItBicycle struct {
 	UseSurfQuality           string `xml:" useSurfQuality,attr"  json:",omitempty"`
 }
 
-type MitCar struct {
+type mitCar struct {
 	ComputationType          string `xml:" computationType,attr"  json:",omitempty"`
 	ComputeAlternativeRoutes string `xml:" computeAlternativeRoutes,attr"  json:",omitempty"`
 	ComputeMonomodalTrip     string `xml:" computeMonomodalTrip,attr"  json:",omitempty"`
@@ -311,7 +311,7 @@ type MitCar struct {
 	UseElevation             string `xml:" useElevation,attr"  json:",omitempty"`
 }
 
-type MitTaxi struct {
+type mitTaxi struct {
 	ComputationType          string `xml:" computationType,attr"  json:",omitempty"`
 	ComputeAlternativeRoutes string `xml:" computeAlternativeRoutes,attr"  json:",omitempty"`
 	ComputeMonomodalTrip     string `xml:" computeMonomodalTrip,attr"  json:",omitempty"`
@@ -338,18 +338,18 @@ type MitTaxi struct {
 	UseElevation             string `xml:" useElevation,attr"  json:",omitempty"`
 }
 
-type DepartureTransport struct {
-	IndividualTransport []IndividualTransport `xml:" individualTransport,omitempty" json:"individualTransport,omitempty" db:" individualTransport,omitempty"`
+type departureTransport struct {
+	IndividualTransport []individualTransport `xml:" individualTransport,omitempty" json:"individualTransport,omitempty" db:" individualTransport,omitempty"`
 }
 
-type IndividualTransport struct {
+type individualTransport struct {
 	MeansCode string `xml:" meansCode,attr"  json:",omitempty"`
 	Selected  string `xml:" selected,attr"  json:",omitempty"`
 	Speed     string `xml:" speed,attr"  json:",omitempty"`
 	Value     string `xml:" value,attr"  json:",omitempty"`
 }
 
-type ItdUsedOptions struct {
+type itdUsedOptions struct {
 	CalcCO2           string `xml:" calcCO2,attr"  json:",omitempty"`
 	CalcNumberOfTrips string `xml:" calcNumberOfTrips,attr"  json:",omitempty"`
 	DwellTime         string `xml:" dwellTime,attr"  json:",omitempty"`
@@ -359,7 +359,7 @@ type ItdUsedOptions struct {
 	Realtime          string `xml:" realtime,attr"  json:",omitempty"`
 }
 
-type ItdServingLines struct {
+type itdServingLines struct {
 	ItdServingLine []ItdServingLine `xml:" itdServingLine,omitempty" json:"itdServingLine,omitempty" db:" itdServingLine,omitempty"`
 }
 
@@ -425,7 +425,7 @@ type Name struct {
 	Text string `xml:",chardata" json:",omitempty"`
 }
 
-type ItdDepartureList struct {
+type itdDepartureList struct {
 	ItdDepartures []ItdDeparture `xml:" itdDeparture,omitempty" json:"itdDeparture,omitempty" db:" itdDeparture,omitempty"`
 }
 
@@ -445,7 +445,7 @@ type ItdDeparture struct {
 	ItdDateTime    ItdDateTime    `xml:" itdDateTime,omitempty" json:"itdDateTime,omitempty" db:" itdDateTime,omitempty"`
 	ItdRTDateTime  ItdRTDateTime  `xml:" itdRTDateTime,omitempty" json:"itdRTDateTime,omitempty" db:" itdRTDateTime,omitempty"`
 	ItdServingLine ItdServingLine `xml:" itdServingLine,omitempty" json:"itdServingLine,omitempty" db:" itdServingLine,omitempty"`
-	ItdServingTrip ItdServingTrip `xml:" itdServingTrip,omitempty" json:"itdServingTrip,omitempty" db:" itdServingTrip,omitempty"`
+	ItdServingTrip itdServingTrip `xml:" itdServingTrip,omitempty" json:"itdServingTrip,omitempty" db:" itdServingTrip,omitempty"`
 }
 
 type ItdRTDateTime struct {
@@ -453,7 +453,7 @@ type ItdRTDateTime struct {
 	ItdTime ItdTime   `xml:" itdTime,omitempty" json:"itdTime,omitempty" db:" itdTime,omitempty"`
 }
 
-type ItdServingTrip struct {
+type itdServingTrip struct {
 	AVMSTripID string `xml:" AVMSTripID,attr"  json:",omitempty"`
 	TripCode   string `xml:" tripCode,attr"  json:",omitempty"`
 }
